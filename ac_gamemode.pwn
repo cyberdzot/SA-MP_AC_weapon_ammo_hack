@@ -232,6 +232,8 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 forward OnGlobalUpdate();
 public OnGlobalUpdate()
 {
+    new weaponid[MAX_SLOT_WEAP],
+        weaponammo[MAX_SLOT_WEAP];
     foreach(new i: Player)
     {
         //Проверяем игрока на то что он живой и бегает по карте
@@ -244,9 +246,6 @@ public OnGlobalUpdate()
             pPauseAC_one{i}--;
             continue;
         }
-
-        new weaponid[MAX_SLOT_WEAP],
-            weaponammo[MAX_SLOT_WEAP];
 
         for(new s; s < MAX_SLOT_WEAP; s++)
         {
